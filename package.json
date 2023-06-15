@@ -1,27 +1,43 @@
 {
-  "name": "metodyprogramowaniaprojekt",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Winsja/MetodyProgramowaniaProjekt.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Winsja/MetodyProgramowaniaProjekt/issues"
-  },
-  "homepage": "https://github.com/Winsja/MetodyProgramowaniaProjekt#readme",
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+    "name": "metodyprogramowaniaprojekt",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "devStart": "npx nodemon src/backend/index.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Winsja/MetodyProgramowaniaProjekt.git"
+    },
+    "keywords": [],
+    "author": "Adam Wiśniewski",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Winsja/MetodyProgramowaniaProjekt/issues"
+    },
+    "homepage": "https://github.com/Winsja/MetodyProgramowaniaProjekt#readme",
+    "dependencies": {
+        "@prisma/client": "^4.15.0",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "express-rate-limit": "^6.7.0",
+        "express-validator": "^7.0.1",
+        "helmet": "^7.0.0",
+        "http-status-codes": "^2.2.0",
+        "jsonwebtoken": "^9.0.0",
+        "prisma": "^4.15.0",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.13",
+        "@types/express": "^4.17.17",
+        "@types/jsonwebtoken": "^9.0.2",
+        "@types/node": "^20.3.1",
+        "@types/uuid": "^9.0.2",
+        "nodemon": "^2.0.22",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.3"
+    }
 }
