@@ -1,32 +1,30 @@
 import { Request, Response } from 'express';
-import { body } from 'express-validator';
 import { StatusCodes } from 'http-status-codes';
 
 import { TRoute } from '../types';
 import { handleRequest } from '../../utils/request.utils';
+import { TUser, updateUser } from '../../services/user.services';
 import { authorize } from '../../utils/middleware.utils';
-import {
-    TOfertaPracy,
-    updateOfertaPracy,
-} from '../../services/ofertyPracy.services';
+import { body } from 'express-validator';
 
 export default {
     method: 'patch',
-    path: '/api/ofertyPracy',
+    path: '/api/user',
     validators: [
         authorize,
-        body('stanowisko').notEmpty().isString(),
-        body('lokalizacja').notEmpty().isString(),
-        body('dataWygasa').notEmpty().toDate(),
-        body('pensja').notEmpty().isNumeric(),
-        body('wymagania').notEmpty().isString(),
+        body('id').notEmpty(),
+        body('imie').notEmpty().isString(),
+        body('nazwisko').notEmpty().isString(),
+        body('email').notEmpty().isEmail(),
+        body('telefon').notEmpty().isNumeric(),
+        body('wyksztalcenie').notEmpty().isString(),
+        body('umiejetnosci').notEmpty().isString(),
     ],
     handler: async (req: Request, res: Response) =>
         handleRequest({
             req,
             res,
             responseSuccessStatus: StatusCodes.CREATED,
-            execute: async () =>
-                await updateOfertaPracy(req.body as TOfertaPracy),
+            execute: async () => await updateUser(req.body as TUser),
         }),
 } as TRoute;

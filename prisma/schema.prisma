@@ -41,6 +41,6 @@ model Aplikacje {
   ofertapracy_id String
   uzytkownicy    Uzytkownicy @relation(fields: [uzytkownik_id], references: [id])
   uzytkownik_id  String
-  data           DateTime
+  data           DateTime    @default(now())
   status         String
 }
