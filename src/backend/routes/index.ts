@@ -8,6 +8,12 @@ import getOfertyPracy from './ofertyPracy/get.ofertyPracy';
 import getUzytkownicyByRola from './user/get.uzytkownicyByRola';
 import getUzytkownikByEmail from './user/get.uzytkownikByEmail';
 import patchUzytkownik from './user/patch.uzytkownik';
+import deleteOfertyPracy from './ofertyPracy/delete.ofertyPracy';
+import patchOfertyPracy from './ofertyPracy/patch.ofertyPracy';
+import deleteAplikacje from './aplikacje/delete.aplikacje';
+import getAplikacje from './aplikacje/get.aplikacje';
+import patchAplikacje from './aplikacje/patch.aplikacje';
+import postAplikacje from './aplikacje/post.aplikacje';
 
 const router = express.Router();
 
@@ -30,6 +36,12 @@ const apiRoutes = [
     getUzytkownicyByRola,
     getUzytkownikByEmail,
     patchUzytkownik,
+    deleteOfertyPracy,
+    patchOfertyPracy,
+    deleteAplikacje,
+    getAplikacje,
+    patchAplikacje,
+    postAplikacje,
 ];
 
 apiRoutes.forEach((route) => {
