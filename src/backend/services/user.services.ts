@@ -31,7 +31,7 @@ export const getUzytkownicyByRola = async ({ rola }: { rola: string }) =>
 
 //TUTAJ COŚ NIE DZIAŁA
 export const getUzytkownikByEmail = async ({ email }: { email: string }) =>
-    await prisma.uzytkownicy.findFirstOrThrow({
+    await prisma.uzytkownicy.findMany({
         where: {
             email,
         },

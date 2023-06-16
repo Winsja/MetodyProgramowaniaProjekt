@@ -1,23 +1,22 @@
-import { getUzytkownikByEmail } from '../../services/user.services';
 import { Request, Response } from 'express';
-import { param } from 'express-validator';
 import { StatusCodes } from 'http-status-codes';
 
 import { TRoute } from '../types';
 import { handleRequest } from '../../utils/request.utils';
+import { getOfertyPracyByPracodawca } from '../../services/ofertyPracy.services';
 
 export default {
     method: 'get',
-    path: '/api/user/u/:email',
-    validators: [param('email').notEmpty().isString()],
+    path: '/api/ofertyPracy/:idPracodawcy',
+    validators: [],
     handler: async (req: Request, res: Response) =>
         handleRequest({
             req,
             res,
-            responseSuccessStatus: StatusCodes.OK,
+            responseSuccessStatus: StatusCodes.CREATED,
             execute: async () =>
-                await getUzytkownikByEmail({
-                    email: req.params.email,
+                await getOfertyPracyByPracodawca({
+                    id: req.params.idPracodawcy,
                 }),
         }),
 } as TRoute;

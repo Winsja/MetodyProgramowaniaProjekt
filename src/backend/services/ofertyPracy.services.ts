@@ -58,6 +58,30 @@ export const updateOfertaPracy = async ({
 
 export const getOfertyPracy = async () => await prisma.ofertyPracy.findMany();
 
+export const getOfertyPracyByPracodawca = async ({ id }: { id: string }) =>
+    await prisma.uzytkownicy.findMany({
+        where: {
+            id,
+        },
+        include: {
+            Aplikacje: {
+                select: {
+                    ofertypracy: {
+                        select: {
+                            id: true,
+                            stanowisko: true,
+                            opis: true,
+                            lokalizacja: true,
+                            dataWygasa: true,
+                            pensja: true,
+                            wymagania: true,
+                        },
+                    },
+                },
+            },
+        },
+    });
+
 export const deleteOfertaPracy = async ({ id }: { id: string }) =>
     await prisma.ofertyPracy.delete({
         where: {
