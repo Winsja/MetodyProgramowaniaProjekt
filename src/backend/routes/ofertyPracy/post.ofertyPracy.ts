@@ -17,7 +17,7 @@ export default {
         authorize,
         body('stanowisko').notEmpty().isString(),
         body('lokalizacja').notEmpty().isString(),
-        body('dataWygasa').notEmpty().toDate(),
+        body('dataWygasa').notEmpty().toDate(), //"dataWygasa": "08-16-2023", format MM-DD-Y
         body('pensja').notEmpty().isNumeric(),
         body('wymagania').notEmpty().isString(),
     ],

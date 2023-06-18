@@ -14,7 +14,13 @@ export default {
     path: '/api/user',
     validators: [
         body('email').isEmail(),
-        body('haslo').not().isEmpty(),
+        body('haslo').notEmpty().isString(),
+        body('imie').notEmpty().isString(),
+        body('nazwisko').notEmpty().isString(),
+        body('wyksztalcenie').notEmpty().isString(),
+        body('umiejetnosci').notEmpty().isString(),
+        body('rola').notEmpty().contains('Pracownik') ||
+            body('rola').notEmpty().contains('Pracodawca'),
         body('telefon').isInt(),
     ],
     handler: async (req: Request, res: Response) =>

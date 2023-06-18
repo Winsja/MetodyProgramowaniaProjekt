@@ -15,7 +15,7 @@ export default {
         handleRequest({
             req,
             res,
-            responseSuccessStatus: StatusCodes.CREATED,
+            responseSuccessStatus: StatusCodes.OK,
             execute: async () => await getAplikacjeNaOfertyPracy(),
         }),
 } as TRoute;

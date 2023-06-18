@@ -26,7 +26,7 @@ model Uzytkownicy {
   id            String      @id
   imie          String
   nazwisko      String
-  email         String
+  email         String      @unique
   haslo         String
   telefon       Int
   wyksztalcenie String

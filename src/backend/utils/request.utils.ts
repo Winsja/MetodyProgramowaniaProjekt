@@ -46,7 +46,6 @@ export const handleRequest = async <Entity>({
             const response = checkPrismaError(err, messages);
             res.status(response.status).json({
                 errors: [response.message],
-                test: 'co jest 5',
             });
         }
     }

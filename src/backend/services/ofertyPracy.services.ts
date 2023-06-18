@@ -59,6 +59,7 @@ export const updateOfertaPracy = async ({
 export const getOfertyPracy = async () => await prisma.ofertyPracy.findMany();
 
 // TO-DO -> Przypisać pracodawcom wszystkie zamieszczone przez nich oferty
+// NIE DZIAŁA jeszcze
 export const getOfertyPracyByPracodawca = async ({ id }: { id: string }) =>
     await prisma.uzytkownicy.findMany({
         where: {

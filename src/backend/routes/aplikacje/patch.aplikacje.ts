@@ -13,7 +13,11 @@ import {
 export default {
     method: 'patch',
     path: '/api/aplikacje',
-    validators: [authorize, body('status').notEmpty().isString()],
+    validators: [
+        authorize,
+        body('id').notEmpty().isString(),
+        body('status').notEmpty().isString(),
+    ],
     handler: async (req: Request, res: Response) =>
         handleRequest({
             req,

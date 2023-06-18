@@ -16,7 +16,7 @@ export default {
         body('imie').notEmpty().isString(),
         body('nazwisko').notEmpty().isString(),
         body('email').notEmpty().isEmail(),
-        body('telefon').notEmpty().isNumeric(),
+        body('telefon').notEmpty().isInt(),
         body('wyksztalcenie').notEmpty().isString(),
         body('umiejetnosci').notEmpty().isString(),
     ],
